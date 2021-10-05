@@ -73,7 +73,7 @@ class Enlace:
         dados = quebra + dados
         dados_real = dados.split(b'\xc0')
         tamanho_real = len(dados_real)
-        if dados.endswith(b'\n'):
+        if dados.endswith(b'\xc0'):
             quebra = b''
         else:
             quebra = dados_real[tamanho_real-1]    
