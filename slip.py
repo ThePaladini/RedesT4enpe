@@ -1,3 +1,4 @@
+quebra = b''
 class CamadaEnlace:
     ignore_checksum = False
 
@@ -68,4 +69,17 @@ class Enlace:
         # vir quebrado de várias formas diferentes - por exemplo, podem vir
         # apenas pedaços de um quadro, ou um pedaço de quadro seguido de um
         # pedaço de outro, ou vários quadros de uma vez só.
-        pass
+        global quebra
+        dados = quebra + dados
+        dados_real = dados.split.(b'\xc0')
+        tamanho_real = len(dados_real)
+        if dados.endswith(b'\n'):
+            quebra = b''
+        else:
+            quebra = dados_real[tamanho_real-1]    
+        
+        for j in range(len(dados_real)-1):
+            dados_real[j]=dados_real[j].replace(b'\xdb', b'\xdb\xdd')
+            dados_real[j]=dados_real[j].replace(b'\xc0', b'\xdb\xdc')    
+            if dados_real[i] != b'':   
+                self.callback(dados_real[i])
