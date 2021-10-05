@@ -52,7 +52,7 @@ class Enlace:
         # serial, fazendo corretamente a delimitação de quadros e o escape de
         # sequências especiais, de acordo com o protocolo CamadaEnlace (RFC 1055).
         datagrama = b'c0' + datagrama + b'c0'
-        self.linha_serial.enviar(self,datagrama)
+        self.linha_serial.enviar(datagrama)
 
         pass
 
