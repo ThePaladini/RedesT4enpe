@@ -71,7 +71,7 @@ class Enlace:
         # pedaço de outro, ou vários quadros de uma vez só.
         global quebra
         dados = quebra + dados
-        dados_real = dados.split.(b'\xc0')
+        dados_real = dados.split(b'\xc0')
         tamanho_real = len(dados_real)
         if dados.endswith(b'\n'):
             quebra = b''
