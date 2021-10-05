@@ -76,7 +76,7 @@ class Enlace:
         if dados.endswith(b'\xc0'):
             quebra = b''
         else:
-            quebra = dados_real[tamanho_real-1]    
+            quebra = dados_real[len(tamanho_real)-1]    
         
         for j in range(len(dados_real)-1):
             dados_real[j]=dados_real[j].replace(b'\xdb', b'\xdb\xdd')
