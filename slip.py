@@ -82,4 +82,4 @@ class Enlace:
             dados_real[j]=dados_real[j].replace(b'\xdb', b'\xdb\xdd')
             dados_real[j]=dados_real[j].replace(b'\xc0', b'\xdb\xdc')    
             if dados_real[i] != b'':   
-                self.callback(dados_real[i])
+                self.callback(dados_real[j])
