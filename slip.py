@@ -52,9 +52,9 @@ class Enlace:
         # serial, fazendo corretamente a delimitação de quadros e o escape de
         # sequências especiais, de acordo com o protocolo CamadaEnlace (RFC 1055).
         if(b'\xc0' in datagrama):
-            datagrama.replace(b'\xc0', b'\xdb\xdc')
+            datagrama=datagrama.replace(b'\xc0', b'\xdb\xdc')
         if(b'\xdb' in datagrama):
-            datagrama.replace(b'\xdb', b'\xdb\xdd')
+            datagrama=datagrama.replace(b'\xdb', b'\xdb\xdd')
 
         datagrama = b'\xc0' + datagrama + b'\xc0'
         self.linha_serial.enviar(datagrama)
