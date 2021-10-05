@@ -71,15 +71,16 @@ class Enlace:
         # pedaço de outro, ou vários quadros de uma vez só.
         global quebra
         dados = quebra + dados
-        dados_real = dados.split(b'\xc0')
-        tamanho_real = len(dados_real)
-        if dados.endswith(b'\xc0'):
-            quebra = b''
-        else:
-            quebra = dados_real[tamanho_real-1]    
-        
-        for j in range(len(dados_real)-1):
-            dados_real[j]=dados_real[j].replace(b'\xdb', b'\xdb\xdd')
-            dados_real[j]=dados_real[j].replace(b'\xc0', b'\xdb\xdc')    
-            if dados_real[j] != b'':   
-                self.callback(dados_real[j])
+        if dados != b'':
+            dados_real = dados.split(b'\xc0')
+            tamanho_real = len(dados_real)
+            if dados.endswith(b'\xc0'):
+                quebra = b''
+            else:
+                quebra = dados_real[tamanho_real-1]    
+            
+            for j in range(len(dados_real)-1):
+                dados_real[j]=dados_real[j].replace(b'\xdb', b'\xdb\xdd')
+                dados_real[j]=dados_real[j].replace(b'\xc0', b'\xdb\xdc')    
+                if dados_real[j] != b'':   
+                    self.callback(dados_real[j])
