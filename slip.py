@@ -80,7 +80,15 @@ class Enlace:
                 quebra = dados_real[tamanho_real-1]    
             
             for j in range(len(dados_real)-1):
-                dados_real[j]=dados_real[j].replace(b'\xdb', b'\xdb\xdd')
-                dados_real[j]=dados_real[j].replace(b'\xc0', b'\xdb\xdc')    
-                if dados_real[j] != b'':   
-                    self.callback(dados_real[j])
+                dados_real[j]=dados_real[j].replace(b'\xdb\xdc',b'\xc0')   
+                dados_real[j]=dados_real[j].replace( b'\xdb\xdd',b'\xdb')
+                 
+                if dados_real[j] != b'':
+                    try:
+                        self.callback(datagrama)
+                    except:
+                    # ignora a exceção, mas mostra na tela
+                        import traceback
+                        traceback.print_exc()
+                    finally:   
+                        dados = b''
