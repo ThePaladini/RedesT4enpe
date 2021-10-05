@@ -85,7 +85,7 @@ class Enlace:
                  
                 if dados_real[j] != b'':
                     try:
-                        self.callback(datagrama)
+                        self.callback(dados_real[j])
                     except:
                     # ignora a exceção, mas mostra na tela
                         import traceback
