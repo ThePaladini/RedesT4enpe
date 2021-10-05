@@ -63,5 +63,5 @@ class Enlace:
         # superior chamando self.callback. Cuidado pois o argumento dados pode
         # vir quebrado de várias formas diferentes - por exemplo, podem vir
         # apenas pedaços de um quadro, ou um pedaço de quadro seguido de um
-        # pedaço de outro, ou vários quadros de uma vez só.
+        # pedaço de outro, ou vários quadros de uma vez só. b
         pass
